@@ -13,6 +13,6 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
   <h1>Welcome to My Website!!!</h1>
-  <p>Please <a href="login.php">log in</a> or <a href="registration.php">register</a> to continue.</p>
+  <p>Please <a href="login.php">log in</a> or <a href="register.php">register</a> to continue.</p>
 </body>
 </html>
