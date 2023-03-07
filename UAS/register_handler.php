@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $address = $_POST['address'];
 
-  $sql = "INSERT INTO users (username, password, email, address) VALUES ('$username', '$password', '$email', '$address')";
+  $sql = "INSERT INTO student (username, password, email, address) VALUES ('$username', '$password', '$email', '$address')";
   if ($conn->query($sql) === TRUE) {
     $_SESSION['user_id'] = $conn->insert_id;
     $_SESSION['username'] = $username;
