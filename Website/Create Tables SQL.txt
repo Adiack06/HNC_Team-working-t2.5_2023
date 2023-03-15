@@ -1,9 +1,15 @@
 CREATE TABLE student (
-  student_id INT PRIMARY KEY,
+  student_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   username VARCHAR(50),
   password VARCHAR(50),
   email VARCHAR(100),
   address VARCHAR(100)
+);
+
+CREATE TABLE inventory (
+  inventory_id INT PRIMARY KEY,
+  description VARCHAR(100),
+  price DECIMAL(10,2)
 );
 
 CREATE TABLE purchase_history (
@@ -17,8 +23,3 @@ CREATE TABLE purchase_history (
   FOREIGN KEY (inventory_id) REFERENCES inventory(inventory_id)
 );
 
-CREATE TABLE inventory (
-  inventory_id INT PRIMARY KEY,
-  description VARCHAR(100),
-  price DECIMAL(10,2)
-);
