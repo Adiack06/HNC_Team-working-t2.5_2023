@@ -51,6 +51,7 @@
 
 				if ($row_count ==1)
 				  {
+						$_SESSION['loggedin'] = 'yes';
 						header('location:profile.php');
 						
 				  } else {
