@@ -20,7 +20,8 @@
                 echo '<pre>';
                         print_r($_SESSION);
                 echo '</pre>';
+				header('location:index.php');
         ?>
-
+		
         </body>
 </html>
