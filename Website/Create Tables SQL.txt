@@ -1,19 +1,23 @@
 CREATE TABLE student (
   student_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   username VARCHAR(50),
-  password VARCHAR(50),
+  password_hash VARCHAR(60),
   email VARCHAR(100),
   address VARCHAR(100)
 );
 
 CREATE TABLE inventory (
-  inventory_id INT PRIMARY KEY,
-  description VARCHAR(100),
+  inventory_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  title VARCHAR(50),
+  description VARCHAR(2000),
+  author_brand VARCHAR(50),
+  form VARCHAR(50),
+  image_name VARCHAR(50),
   price DECIMAL(10,2)
 );
 
 CREATE TABLE purchase_history (
-  order_id INT PRIMARY KEY,
+  order_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   order_date DATE,
   student_id INT,
   inventory_id INT,
