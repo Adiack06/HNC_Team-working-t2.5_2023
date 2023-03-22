@@ -2,24 +2,34 @@
   session_start();
 
   if ($_SESSION['loggedin'] == 'yes') {
-    echo 'Logged in!';
   } else {
-    header('location: index.html');
+    header('location: index.php');
   }
 ?>
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Super Secret Stuff</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-  </head>
-  <body>
-    <div class="info-box">
-      <h3>Super Secret Stuff</h3>
-      <p>Welcome to the super secret page!</p>
-      <p>Only authorized users can access this content.</p>
-      <a href="logout.php">Log out</a>
-    </div>
-  </body>
+<head>
+	<title>Profile Page</title>
+</head>
+<body>
+	<p>Hello <?php echo $_SESSION['username']; ?></p>
+	<form method="post" action="update_profile.php">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" value="<?php echo $_SESSION['username']; ?>" />
+		<br />
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" value="<?php echo $_SESSION['email']; ?>" />
+		<br />
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password";/>
+		<br />
+		<label for="address">Address:</label>
+		<textarea id="address" name="address"><?php echo $_SESSION['address']; ?></textarea>
+		<br />
+		<input type="submit" value="Save Changes" />
+	</form>
+	<form method="post" action="logout.php">
+		<input type="submit" value="Log Out" />
+	</form>
+</body>
 </html>

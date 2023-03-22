@@ -40,6 +40,10 @@
 						echo $password.'<br>';
 						echo $email.'<br>';
 						echo $address.'<br>';
+						$_SESSION['username'] = $username;
+						$_SESSION['email'] = $email;
+						$_SESSION['student_id'] = $student_id;
+						$_SESSION['address'] = $address;
 				};
 
 				$stmt->close(); //close the sql
@@ -52,7 +56,7 @@
 				if ($row_count ==1)
 				  {
 						$_SESSION['loggedin'] = 'yes';
-						header('location:profile.php');
+						header('location:products_page.php');
 						
 				  } else {
 						session_unset();
