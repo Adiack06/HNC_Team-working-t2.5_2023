@@ -1,40 +1,48 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+
+  if ($_SESSION['loggedin'] == 'yes') {
+  } else {
+    header('location: index.php');
+  }
+?>
 <html>
 	<head>
-		<title>Login or Register</title>
+		<title>Products</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	<body>
-	<h1>STOCK</h1>
+	<h1>inventory</h1>
 	<?php
 		include 'sql.php';//include creds
-		$stmt = $conn->prepare("SELECT stockno,description,price,qtyinstock FROM stock");
+		$stmt = $conn->prepare("SELECT inventory_id,description,price,qtyinstock,image_name,title FROM inventory");
 		$stmt->execute();
 		$stmt->store_result();
-		$stmt->bind_result($stockno,$description,$price,$qtyinstock);
+		$stmt->bind_result($inventory_id,$description,$price,$qtyinstock,$image_name,$title);
 		
 		$row_count = $stmt ->num_rows;
 		
 		echo 'number of rows...'.$row_count.'<br>';
 		
-		echo '<table border = "1" id="stock">
+		echo '<table border = "1" id="inventory">
 			<tr>
-				<th>Stock Number</th>
+				<th>inventory Number</th>
 				<th>Image</th>
-				<th>Description</th>
+				<th>title</th>
 				<th>Price</th>
 				<th>Quantity</th>
 				<th>Order</th>
 			</tr>';
 		while ($stmt ->fetch()) {
 			echo '<tr>';
-				echo '<td>'.$stockno.'</td>';
-				echo '<td><img src="images/'.$stockno.'.jpg" alt="'.$description.'" style="width:300px;"></td>';
-				echo '<td>'.$description.'</td>';
+				echo '<td>'.$inventory_id.'</td>';
+				echo '<td><img src="images/'.$image_name.'" alt="'.$description.'" style="width:300px;"></td>';
+				echo '<td>'.$title.'</td>';
 				echo '<td>£'.$price.'</td>';
 				echo '<td>'.$qtyinstock.'</td>';
 				echo '<td>';
-				echo '<select name="'.$stockno.'" form="orderform">';
+				echo '<select name="'.$inventory_id.'" form="orderform">';
 				for($i=0;$i<$qtyinstock+1;$i++){
 					echo ' <option value="' . $i . '">' . $i . '</option>';
 				};
