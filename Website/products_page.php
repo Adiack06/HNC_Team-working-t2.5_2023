@@ -27,26 +27,13 @@
 		
 		echo '<table border = "1" id="inventory">
 			<tr>
-				<th>inventory Number</th>
 				<th>Image</th>
 				<th>title</th>
-				<th>Price</th>
-				<th>Quantity</th>
-				<th>Order</th>
 			</tr>';
 		while ($stmt ->fetch()) {
 			echo '<tr>';
-				echo '<td>'.$inventory_id.'</td>';
 				echo '<td><img src="images/'.$image_name.'" alt="'.$description.'" style="width:300px;"></td>';
-				echo '<td>'.$title.'</td>';
-				echo '<td>£'.$price.'</td>';
-				echo '<td>'.$qtyinstock.'</td>';
-				echo '<td>';
-				echo '<select name="'.$inventory_id.'" form="orderform">';
-				for($i=0;$i<$qtyinstock+1;$i++){
-					echo ' <option value="' . $i . '">' . $i . '</option>';
-				};
-				echo '</select>';
+				echo '<td><a href="product.php?inventory_id=' .$inventory_id. '&title=' .$title.'&description=' .$description.'&author_brand=' .$author_brand.'&form=' .$form. '&image_name=' .$image_name.'&price=' .$price.'&qtyinstock=' .$qtyinstock.'">'.$title.'</a></td>';
 				echo '</td>';
 				
 			echo '</tr>';
