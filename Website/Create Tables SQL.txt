@@ -8,7 +8,7 @@ CREATE TABLE student (
 
 CREATE TABLE inventory (
   inventory_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  title VARCHAR(200),
+  title VARCHAR(1000),
   description VARCHAR(2000),
   author_brand VARCHAR(50),
   form VARCHAR(50),
