@@ -1,30 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			#stock {
-			  font-family: Arial, Helvetica, sans-serif;
-			  border-collapse: collapse;
-			  width: 100%;
-			}
-
-			#stock td, #stock th {
-			  border: 1px solid #ddd;
-			  padding: 8px;
-			}
-
-			#stock tr:nth-child(even){background-color: #f2f2f2;}
-
-			#stock tr:hover {background-color: #ddd;}
-
-			#stock th {
-			  padding-top: 12px;
-			  padding-bottom: 12px;
-			  text-align: left;
-			  background-color: #04AA6D;
-			  color: white;
-			}
-		</style>
+		<title>Login or Register</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
 	</head>
 	<body>
 	<h1>STOCK</h1>
