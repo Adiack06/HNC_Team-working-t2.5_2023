@@ -13,7 +13,8 @@ CREATE TABLE inventory (
   author_brand VARCHAR(50),
   form VARCHAR(50),
   image_name VARCHAR(50),
-  price DECIMAL(10,2)
+  price DECIMAL(10,2),
+  qtyinstock INT
 );
 
 CREATE TABLE purchase_history (
