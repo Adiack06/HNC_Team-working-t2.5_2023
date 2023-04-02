@@ -28,3 +28,11 @@ CREATE TABLE purchase_history (
   FOREIGN KEY (inventory_id) REFERENCES inventory(inventory_id)
 );
 
+CREATE TABLE baskets (
+  student_id INT,
+  inventory_id INT,
+  order_quantity INT,
+  FOREIGN KEY (student_id) REFERENCES student(student_id),
+  FOREIGN KEY (inventory_id) REFERENCES inventory(inventory_id)
+);
+
