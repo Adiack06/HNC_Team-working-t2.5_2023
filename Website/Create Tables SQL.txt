@@ -46,3 +46,20 @@ CREATE TABLE customer_reviews (
   FOREIGN KEY (user_id) REFERENCES student(student_id)
 );
 
+CREATE TABLE `orders` (
+  `orderno` int NOT NULL AUTO_INCREMENT,
+  `student_id` int NOT NULL,
+  PRIMARY KEY (`orderno`),
+  KEY `student_id` (`student_id`),
+  FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`)
+);
+
+CREATE TABLE `orderline` (
+  `orderno` int NOT NULL,
+  `inventory_id` int NOT NULL,
+  `qty` int DEFAULT NULL,
+  PRIMARY KEY (`orderno`,`inventory_id`),
+  KEY `inventory_id` (`inventory_id`),
+  FOREIGN KEY (`orderno`) REFERENCES `orders` (`orderno`),
+  FOREIGN KEY (`inventory_id`) REFERENCES `inventory` (`inventory_id`)
+) 

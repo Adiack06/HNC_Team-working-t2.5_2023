@@ -41,10 +41,7 @@
 		
 		$stmt ->close();
 		$conn ->close();
-		
-		echo '<form action="placeorder.php" method = "post" id="orderform">
-		<input type="submit" value="Order">
-		</form>';
+		echo '<button onclick="location.href=\'basket.php\'">Basket</button>';
 		
 		echo '</table>';
 	?>
