@@ -11,6 +11,23 @@
 	<head>
 		<title>Products</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<style>
+			#inventory {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				grid-gap: 20px;
+			}
+			#inventory img {
+				max-width: 100%;
+			}
+			#inventory a {
+				color: #000;
+				text-decoration: none;
+			}
+			#inventory a:hover {
+				color: #f00;
+			}
+		</style>
 	</head>
 	<body>
 	<h1>inventory</h1>
@@ -25,25 +42,18 @@
 		
 		echo 'number of rows...'.$row_count.'<br>';
 		
-		echo '<table border = "1" id="inventory">
-			<tr>
-				<th>Image</th>
-				<th>title</th>
-			</tr>';
+		echo '<div id="inventory">';
 		while ($stmt ->fetch()) {
-			echo '<tr>';
-				echo '<td><img src="images/'.$image_name.'" alt="'.$description.'" style="width:300px;"></td>';
-				echo '<td><a href="product.php?inventory_id=' .$inventory_id. '&title=' .$title.'&description=' .$description.'&author_brand=' .$author_brand.'&form=' .$form. '&image_name=' .$image_name.'&price=' .$price.'&qtyinstock=' .$qtyinstock.'">'.$title.'</a></td>';
-				echo '</td>';
-				
-			echo '</tr>';
+			echo '<div>';
+				echo '<img src="images/'.$image_name.'" alt="'.$description.'">';
+				echo '<h2><a href="product.php?inventory_id=' .$inventory_id. '&title=' .$title.'&description=' .$description.'&author_brand=' .$author_brand.'&form=' .$form. '&image_name=' .$image_name.'&price=' .$price.'&qtyinstock=' .$qtyinstock.'">'.$title.'</a></h2>';
+			echo '</div>';
 		};
+		echo '</div>';
 		
 		$stmt ->close();
 		$conn ->close();
 		echo '<button onclick="location.href=\'basket.php\'">Basket</button>';
-		
-		echo '</table>';
 	?>
 	</body>
 </html>
