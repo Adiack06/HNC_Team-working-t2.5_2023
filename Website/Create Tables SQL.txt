@@ -38,12 +38,10 @@ CREATE TABLE baskets (
 
 CREATE TABLE customer_reviews (
   item_id INT,
-  user_id INT,
   text VARCHAR(2000),
   stars INT,
   PRIMARY KEY (item_id, user_id),
   FOREIGN KEY (item_id) REFERENCES inventory(inventory_id),
-  FOREIGN KEY (user_id) REFERENCES student(student_id)
 );
 
 CREATE TABLE `orders` (
