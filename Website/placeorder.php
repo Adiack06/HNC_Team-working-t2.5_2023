@@ -44,6 +44,11 @@ while ($stmt->fetch()) {
     $total = $total + $total_price;
 }
 
+$stmt_delete = $conn->prepare("DELETE FROM baskets WHERE student_id = ?");
+$stmt_delete->bind_param("i", $student_id);
+$stmt_delete->execute();
+$stmt_delete->close();
+
 echo 'Total: '.$total.'<br>';
 echo 'Total (with VAT): '.$total*1.2;
 
@@ -51,4 +56,5 @@ $stmt->close();
 $stmt_insert->close();
 $stmt_update->close();
 $conn->close();
+header("Location: receipt.php?);
 ?>
