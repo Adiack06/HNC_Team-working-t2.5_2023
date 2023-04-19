@@ -16,12 +16,19 @@ p {
   margin-bottom: 20px;
 }
 
-a {#links
-  color: #4d94ff;
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4d94ff;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background-color 0.2s ease-in-out;
 }
 
-a:hover {#links
-  text-decoration: underline;
+a:hover {
+  background-color: #3d80ff;
 }
