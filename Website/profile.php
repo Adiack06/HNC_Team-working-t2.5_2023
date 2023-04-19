@@ -10,9 +10,11 @@
 <html>
 <head>
 	<title>Profile Page</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
 	<p>Hello <?php echo $_SESSION['username']; ?></p>
+	<p>Here is your current info if any of it needs changing just edit it and click save changes<p>
 	<form method="post" action="update_profile.php">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="username" value="<?php echo $_SESSION['username']; ?>" />
