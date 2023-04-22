@@ -3,6 +3,8 @@ session_start();
 
 include 'sql.php';//go inlude the database credentials!
 
+echo '<head><link rel="stylesheet" type="text/css" href="styles/style.css"></head>';
+
 $student_id = $_SESSION['student_id'];
 
 $stmt = $conn->prepare("INSERT INTO orders (student_id) VALUES (?)");
@@ -62,5 +64,5 @@ $conn->close();
 <button onclick="window.print()">Print Receipt</button>
 
 //Link back to products
-<a href="product.php">Back to product</a>
+<a href="products_page.php">Back to product</a>
 
