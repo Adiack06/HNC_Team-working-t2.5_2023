@@ -37,11 +37,12 @@ CREATE TABLE baskets (
 );
 
 CREATE TABLE customer_reviews (
-  item_id INT,
+  review_id INT AUTO_INCREMENT,
+  inventory_id INT,
   text VARCHAR(2000),
   stars INT,
-  PRIMARY KEY (item_id, user_id),
-  FOREIGN KEY (item_id) REFERENCES inventory(inventory_id),
+  PRIMARY KEY (review_id),
+  FOREIGN KEY (inventory_id) REFERENCES inventory(inventory_id)
 );
 
 CREATE TABLE `orders` (
