@@ -41,20 +41,21 @@
 		$row_count = $stmt ->num_rows;
 		$name_length = 50;
 		echo '<div id="inventory">';
-		while ($stmt->fetch()) {
-			echo '<div>';
-			echo '<img src="images/' . $image_name . '" alt="' . $description . '">';
-			echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title . '</a></h2>';
-			
-			if (strlen( $title) >= $name_length) {
-				echo '<p>' . substr( $title, 0, $name_length) . '...</p>';
-			} else {
-				echo '<p>' .  $title . str_repeat('&nbsp;', $name_length - strlen( $title)) . '</p>';
-			}
-			
-			echo '</div>';
-		};
+			while ($stmt->fetch()) {
+    			echo '<div>';
+    			echo '<img src="images/' . $image_name . '" alt="' . $description . '">';
+    			echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title . '</a></h2>';
+
+    			if (strlen($title) >= $name_length) {
+      			  echo '<p>' . substr($title, 0, $name_length) . '...</p>';
+    			} else {
+      			  echo '<p>' . $title . str_repeat('&nbsp;', $name_length - strlen($title)) . '</p>';
+   		 		}
+
+    			echo '</div>';
+			};
 		echo '</div>';
+
 		
 		$stmt ->close();
 		$conn ->close();
@@ -62,3 +63,4 @@
 	?>
 	</body>
 </html>
+
