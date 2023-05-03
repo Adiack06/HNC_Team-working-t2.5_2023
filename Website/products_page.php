@@ -44,7 +44,7 @@
 		while ($stmt->fetch()) {
 			echo '<div>';
 			echo '<img src="images/' . $image_name .'">';
-			echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title . '</a></h2>';
+			echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title . '</a></h2>';
 			
 			if (strlen( $title) >= $name_length) {
 				echo '<p>' . substr( $title, 0, $name_length) . '...</p>';
