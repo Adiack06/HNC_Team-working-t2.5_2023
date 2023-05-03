@@ -33,10 +33,10 @@
 	<h1>inventory</h1>
 	<?php
 		include 'sql.php';//include creds
-		$stmt = $conn->prepare("SELECT inventory_id,description,price,qtyinstock,image_name,title,author_brand,form FROM inventory");
+		$stmt = $conn->prepare("SELECT inventory_id,price,qtyinstock,image_name,title,author_brand,form FROM inventory");
 		$stmt->execute();
 		$stmt->store_result();
-		$stmt->bind_result($inventory_id,$description,$price,$qtyinstock,$image_name,$title,$author_brand,$form);
+		$stmt->bind_result($inventory_id,$price,$qtyinstock,$image_name,$title,$author_brand,$form);
 		
 		$row_count = $stmt ->num_rows;
 		$name_length = 50;
