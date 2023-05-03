@@ -39,14 +39,19 @@
 		$stmt->bind_result($inventory_id,$description,$price,$qtyinstock,$image_name,$title,$author_brand,$form);
 		
 		$row_count = $stmt ->num_rows;
-		
-		echo 'number of rows...'.$row_count.'<br>';
-		
+		$name_length = 50
 		echo '<div id="inventory">';
-		while ($stmt ->fetch()) {
+		while ($stmt->fetch()) {
 			echo '<div>';
-				echo '<img src="images/'.$image_name.'" alt="'.$description.'">';
-				echo '<h2><a href="product.php?inventory_id=' .$inventory_id. '&title=' .$title.'&description=' .$description.'&author_brand=' .$author_brand.'&form=' .$form. '&image_name=' .$image_name.'&price=' .$price.'&qtyinstock=' .$qtyinstock.'">'.$title.'</a></h2>';
+			echo '<img src="images/' . $image_name . '" alt="' . $description . '">';
+			echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title . '</a></h2>';
+			
+			if (strlen($description) >= $name_length {
+				echo '<p>' . substr($description, 0, $name_length) . '...</p>';
+			} else {
+				echo '<p>' . $description . str_repeat('&nbsp;', $name_length - strlen($description)) . '</p>';
+			}
+			
 			echo '</div>';
 		};
 		echo '</div>';

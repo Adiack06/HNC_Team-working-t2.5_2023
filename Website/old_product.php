@@ -14,8 +14,6 @@
 		$image_name = $_GET['image_name'];
 		$price = $_GET['price'];
 		$qtyinstock = $_GET['qtyinstock'];
-		$text = $_GET['text'];
-		$stars = $_GET['stars'];
 	?>
 	<h1><?php echo $title; ?></h1>
 	<img src="images/<?php echo $image_name; ?>" alt="<?php echo $description; ?>" style="width:300px;">
@@ -24,10 +22,6 @@
 	<p><strong>Form:</strong> <?php echo $form; ?></p>
 	<p><strong>Price:</strong> <?php echo $price; ?></p>
 	<p><strong>Quantity in stock:</strong> <?php echo $qtyinstock; ?></p>
-	<?php if ($text && $stars) { ?>
-		<p><strong>Review:</strong> <?php echo $text; ?></p>
-		<p><strong>Stars:</strong> <?php echo $stars; ?></p>
-	<?php } ?>
 	<form action="add_to_basket.php" method="post">
 		<input type="hidden" name="inventory_id" value="<?php echo $inventory_id; ?>">
 		<label for="quantity">Select quantity:</label>
