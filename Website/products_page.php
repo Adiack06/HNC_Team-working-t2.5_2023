@@ -48,7 +48,7 @@
           if (strlen($title) >= $name_length) {
       			  echo '<a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . substr($title, 0, $name_length) . '...</a>';
     			} else {
-      			  echo '<h2><a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title;
+      			  echo '<a href="product.php?inventory_id=' . $inventory_id . '&title=' . $title . '&description=' . $description . '&author_brand=' . $author_brand . '&form=' . $form . '&image_name=' . $image_name . '&price=' . $price . '&qtyinstock=' . $qtyinstock . '">' . $title .'</a>';
    		 		}
     			echo '</h2>';
     			echo '</div>';
